@@ -666,6 +666,4 @@ document.getElementById("logoutBtn").addEventListener("click", () => {
 
 ---
 
-## 📄 Licencia
 
-MIT - Proyecto educativo | 2025
