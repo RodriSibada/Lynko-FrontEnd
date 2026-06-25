@@ -1,9 +1,5 @@
-# 🎨 Lynko Frontend - README
+Lynko Frontend - README
 
-> Interfaz gamificada de educación - Vanilla HTML/CSS/JavaScript  
-> Inspirado en Duolingo | Diseño naranja & blanco | Nunito Font
-
-**Tech Stack**: HTML5 + CSS3 + Vanilla JS | **Equipo**: 4 desarrolladores | **Presupuesto**: $0
 
 ---
 
