@@ -1,9 +1,8 @@
-# 🎨 Lynko Frontend - README
+Lynko Frontend - README
 
-> Interfaz gamificada de educación - Vanilla HTML/CSS/JavaScript  
-> Inspirado en Duolingo | Diseño naranja & blanco | Nunito Font
+> Interfaz gamificada de educación 
+> Inspirado en Duolingo 
 
-**Tech Stack**: HTML5 + CSS3 + Vanilla JS | **Equipo**: 4 desarrolladores | **Presupuesto**: $0
 
 ---
 
@@ -771,43 +770,6 @@ app.mount("/static", StaticFiles(directory="Pages"), name="static")
 
 ---
 
-## ✅ Checklist Frontend
-
-- [ ] Todas las páginas HTML usan `styles.css` globales
-- [ ] Cada página tiene su CSS específico (`login.css`, etc.)
-- [ ] `dashboard-auth-helper.js` está en Pages/
-- [ ] Todas las rutas internas usan rutas relativas
-- [ ] Los formularios POST van a `/login` y `/registro`
-- [ ] Los links de navegación apuntan a `.html` correctamente
-- [ ] El logo y emojis se muestran correctamente
-- [ ] Responsive funciona en móvil (480px)
-- [ ] Token + usuario se guardan en localStorage después de login
-- [ ] Cerrar sesión limpia localStorage y redirige a login.html
-
----
-
-## 👥 Guía por Desarrollador
-
-**Rodrigo** (Líder):
-- Supervisar estructura CSS global
-- Definir variables y paleta de colores
-- Validar responsive design
-
-**Simón**:
-- Desarrollar páginas: Actividades, Admin
-- Implementar formularios
-
-**María**:
-- Desarrollar páginas: Materias, Progreso, Recompensas
-- Integrar CSS por página
-
-**Montserrat**:
-- Desarrollar páginas: Login, Registro, Perfil, Ajustes
-- Revisar y mejorar dashboard-auth-helper.js
-- Conectar con endpoints backend
-
----
-
 ## 🔗 Links Útiles
 
 - [MDN Web Docs](https://developer.mozilla.org/)
@@ -863,10 +825,4 @@ document.addEventListener("DOMContentLoaded", () => {
 document.getElementById("logoutBtn").addEventListener("click", () => {
     LynkoAuth.logout();  // Limpia localStorage + redirige a login.html
 });
-```
-
----
-
-## 📄 Licencia
-
-MIT - Proyecto educativo | 2025
+``
