@@ -1,64 +1,5 @@
-/* ============================================
-   STYLES.CSS - SISTEMA DE DISEÑO LYNKO
-   Selectores de ID | Box Models | Flexbox | Google Fonts
-   ============================================ */
-
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Fredoka+One&family=Comfortaa:wght@400;700&display=swap');
 
-/* ============================================
-   1. VARIABLES CSS (Colores, espaciado, fuentes)
-   ============================================ */
-
-:root {
-    /* ===== COLORES ===== */
-    --orange-primary: #FF7A00;
-    --orange-dark: #E66E00;
-    --orange-light: #FFF0E0;
-    --orange-lighter: #FFFBF5;
-    
-    --bg-main: #FDF9F5;
-    --card-bg: #FFFFFF;
-    
-    --text-dark: #333333;
-    --text-muted: #666666;
-    --text-light: #999999;
-    
-    --success: #4CAF50;
-    --warning: #FF9F00;
-    --danger: #D32F2F;
-    
-    /* ===== TIPOGRAFÍA ===== */
-    --font-title: 'Fredoka One', sans-serif;      /* Títulos - Divertida */
-    --font-subtitle: 'Comfortaa', sans-serif;     /* Subtítulos - Amigable */
-    --font-body: 'Nunito', sans-serif;            /* Cuerpo - Legible */
-    
-    /* ===== ESPACIADO (Box Model) ===== */
-    --spacing-xs: 4px;
-    --spacing-sm: 8px;
-    --spacing-md: 16px;
-    --spacing-lg: 24px;
-    --spacing-xl: 32px;
-    --spacing-xxl: 48px;
-    
-    /* ===== BORDER RADIUS ===== */
-    --border-radius: 20px;
-    --border-radius-sm: 12px;
-    --border-radius-lg: 30px;
-    
-    /* ===== SOMBRAS ===== */
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
-    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
-    
-    /* ===== TRANSICIONES ===== */
-    --transition-fast: 0.2s ease-in-out;
-    --transition-normal: 0.3s ease-in-out;
-    --transition-slow: 0.5s ease-in-out;
-}
-
-/* ============================================
-   2. RESET Y ESTILOS GLOBALES
-   ============================================ */
 
 * {
     box-sizing: border-box;
@@ -72,152 +13,211 @@ html {
 }
 
 body {
-    font-family: var(--font-body);
-    background-color: var(--bg-main);
-    color: var(--text-dark);
+    font-family: 'Nunito', sans-serif;
+    background-color: #FDF9F5;
+    color: #333333;
     line-height: 1.6;
     min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-/* ============================================
-   3. TIPOGRAFÍA (Títulos, subtítulos, párrafos)
-   ============================================ */
+
 
 h1, h2 {
-    font-family: var(--font-title);
+    font-family: 'Fredoka One', sans-serif;
     font-weight: 800;
     line-height: 1.2;
-    margin-bottom: var(--spacing-md);
+    margin: 0;
+    margin-bottom: 16px;
+    padding: 0;
     letter-spacing: 0.5px;
 }
 
 h1 {
     font-size: 32px;
-    color: var(--text-dark);
+    color: #333333;
 }
 
 h2 {
     font-size: 28px;
-    color: var(--text-dark);
+    color: #333333;
 }
 
 h3, h4, h5, h6 {
-    font-family: var(--font-subtitle);
+    font-family: 'Comfortaa', sans-serif;
     font-weight: 700;
-    margin-bottom: var(--spacing-sm);
+    margin: 0;
+    margin-bottom: 8px;
+    padding: 0;
     letter-spacing: 0.3px;
 }
 
 h3 {
     font-size: 20px;
-    color: var(--text-dark);
+    color: #333333;
 }
 
 h4 {
     font-size: 16px;
-    color: var(--text-dark);
+    color: #333333;
 }
 
 p {
-    font-family: var(--font-body);
+    font-family: 'Nunito', sans-serif;
     font-size: 14px;
-    color: var(--text-muted);
-    margin-bottom: var(--spacing-md);
+    color: #666666;
+    margin: 0;
+    margin-bottom: 16px;
+    padding: 0;
 }
 
 a {
-    color: var(--orange-primary);
+    color: #FF7A00;
     text-decoration: none;
-    transition: color var(--transition-fast);
+    transition: color 0.2s ease-in-out;
 }
 
 a:hover {
-    color: var(--orange-dark);
+    color: #E66E00;
 }
 
-/* ============================================
-   4. LAYOUT PRINCIPAL (Sidebar + Main)
-   ============================================ */
+
 
 #sidebar {
-    width: 280px;
-    height: 100vh;
-    background: linear-gradient(135deg, var(--orange-primary), var(--orange-dark));
+
     position: fixed;
     left: 0;
     top: 0;
-    padding: var(--spacing-lg);
+    width: 280px;
+    height: 100vh;
+    margin: 0;
+    padding: 24px;
+    border: none;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+
     display: flex;
     flex-direction: column;
-    box-shadow: var(--shadow-lg);
+    gap: 24px;
+    
+
+    background: linear-gradient(135deg, #FF7A00, #E66E00);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
     z-index: 1000;
     overflow-y: auto;
 }
 
 #sidebar-content {
+
+    margin: 0;
+    padding: 0;
+    border: none;
+    
+
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-lg);
+    gap: 24px;
 }
 
+
 #logo-container {
+
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 16px;
+    padding: 0;
+    border: none;
+    
+
     text-align: center;
-    margin-bottom: var(--spacing-md);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--spacing-md);
+    gap: 16px;
 }
 
 #logo-placeholder {
+
     width: 80px;
     height: 80px;
-    background: rgba(255, 255, 255, 0.2);
+    margin: 0;
+    padding: 0;
+    border: 3px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
+    
+    /* DISPLAY */
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
+    
+    /* ESTILOS */
+    background: rgba(255, 255, 255, 0.2);
     overflow: hidden;
-    border: 3px solid rgba(255, 255, 255, 0.3);
 }
 
 #logo-placeholder img {
+
     width: 100%;
     height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    
     object-fit: contain;
 }
 
 #logo-container p {
+
+    margin: 0;
+    padding: 0;
+    border: none;
     color: white;
     font-size: 12px;
     font-weight: 600;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    margin: 0;
 }
 
+
 #nav-menu {
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-sm);
+    gap: 8px;
     flex: 1;
 }
 
 .nav-item {
+    width: 100%;
     margin: 0;
+    padding: 0;
+    border: none;
 }
 
 .nav-item a {
+
+    width: 100%;
+    margin: 0;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 12px;
+    
+
     color: white;
     display: flex;
     align-items: center;
-    gap: var(--spacing-md);
-    padding: var(--spacing-md) var(--spacing-lg);
-    border-radius: var(--border-radius-sm);
-    transition: all var(--transition-fast);
+    gap: 16px;
+    
     font-weight: 600;
     font-size: 14px;
+    transition: all 0.2s ease-in-out;
 }
 
 .nav-item a:hover {
@@ -231,49 +231,90 @@ a:hover {
     font-weight: 700;
 }
 
+
+
 #streak-card {
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: var(--border-radius-sm);
-    padding: var(--spacing-lg);
-    text-align: center;
-    color: white;
+    width: 100%;
+    margin: 0;
+    padding: 24px;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
 }
 
 #streak-fire {
+
+    margin: 0;
+    padding: 0;
+    border: none;
+    
+
     font-size: 32px;
-    margin-bottom: var(--spacing-sm);
 }
 
 #streak-info {
+
+    margin: 0;
+    padding: 0;
+    border: none;
+    
+
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xs);
+    gap: 4px;
 }
 
 #streak-info span {
+
+    margin: 0;
+    padding: 0;
+    border: none;
+    
+
     font-size: 12px;
     opacity: 0.9;
 }
 
 #streak-info strong {
+
+    margin: 0;
+    padding: 0;
+    border: none;
+
     font-size: 20px;
     font-weight: 700;
-    font-family: var(--font-title);
+    font-family: 'Fredoka One', sans-serif;
 }
 
+
+
 #logout-btn {
+
+    width: 100%;
+    margin: 0;
+    padding: 16px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
     background: rgba(255, 255, 255, 0.2);
     color: white;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: var(--spacing-md) var(--spacing-lg);
-    border-radius: var(--border-radius-sm);
     cursor: pointer;
     font-weight: 600;
     font-size: 12px;
-    transition: all var(--transition-fast);
-    width: 100%;
-    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    transition: all 0.2s ease-in-out;
 }
 
 #logout-btn:hover {
@@ -281,120 +322,156 @@ a:hover {
     border-color: rgba(255, 255, 255, 0.5);
 }
 
-/* ============================================
-   5. MAIN CONTENT
-   ============================================ */
 
-.main-content {
+#main-content {
+
+    width: calc(100% - 280px);
+    margin: 0;
     margin-left: 280px;
-    padding: var(--spacing-lg);
+    padding: 24px;
+    border: none;
+    
+    /* ESTILOS */
     min-height: 100vh;
 }
 
-/* ============================================
-   6. HEADER TOP
-   ============================================ */
 
 #header-top {
+
+    width: 100%;
+    margin: 0;
+    margin-bottom: 32px;
+    padding: 0;
+    border: none;
+    gap: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: var(--spacing-xl);
-    gap: var(--spacing-lg);
     flex-wrap: wrap;
 }
 
 #welcome-text {
+
     flex: 1;
     min-width: 250px;
+    margin: 0;
+    padding: 0;
+    border: none;
 }
 
 #welcome-text h1 {
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: 8px;
 }
 
 #welcome-text p {
-    color: var(--text-muted);
     margin: 0;
 }
 
 #user-status {
+
+    margin: 0;
+    padding: 0;
+    border: none;
+    gap: 24px;
     display: flex;
     align-items: center;
-    gap: var(--spacing-lg);
     flex-wrap: wrap;
 }
 
 #profile-badge {
+
+    margin: 0;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 12px;
+    gap: 16px;
     display: flex;
     align-items: center;
-    gap: var(--spacing-md);
     background: white;
-    padding: var(--spacing-md) var(--spacing-lg);
-    border-radius: var(--border-radius-sm);
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 #avatar-placeholder {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, var(--orange-light), var(--orange-primary));
+    margin: 0;
+    padding: 0;
+    border: none;
     border-radius: 50%;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: linear-gradient(135deg, #FFF0E0, #FF7A00);
     font-size: 24px;
-    flex-shrink: 0;
 }
 
 #profile-info {
+    margin: 0;
+    padding: 0;
+    border: none;
+    gap: 4px;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xs);
 }
 
 #profile-info p {
-    font-weight: 700;
-    color: var(--text-dark);
+
     margin: 0;
+    padding: 0;
+    border: none;
+    font-weight: 700;
+    color: #333333;
     font-size: 14px;
 }
 
 #profile-info span {
+    margin: 0;
+    padding: 0;
+    border: none;
     font-size: 12px;
-    color: var(--text-muted);
+    color: #666666;
 }
 
 #points-badge {
-    background: var(--orange-primary);
+    margin: 0;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 12px;
+    background: #FF7A00;
     color: white;
-    padding: var(--spacing-md) var(--spacing-lg);
-    border-radius: var(--border-radius-sm);
     font-weight: 700;
     font-size: 14px;
     white-space: nowrap;
 }
 
 #points-badge span {
+
     display: block;
+    margin: 0;
+    padding: 0;
+    border: none;
     font-size: 11px;
     opacity: 0.9;
 }
 
 #notification-btn {
-    background: white;
-    border: none;
+
     width: 48px;
     height: 48px;
+    margin: 0;
+    padding: 0;
+    border: none;
     border-radius: 50%;
-    font-size: 20px;
-    cursor: pointer;
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: var(--shadow-sm);
-    transition: all var(--transition-fast);
+    position: relative;
+    background: white;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease-in-out;
 }
 
 #notification-btn:hover {
@@ -405,55 +482,79 @@ a:hover {
     position: absolute;
     top: -8px;
     right: -8px;
-    background: var(--danger);
-    color: white;
     width: 24px;
     height: 24px;
+    margin: 0;
+    padding: 0;
+    border: none;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    /* ESTILOS */
+    background: #D32F2F;
+    color: white;
     font-size: 12px;
     font-weight: 700;
 }
 
-/* ============================================
-   7. CARDS Y CONTENEDORES
-   ============================================ */
+
 
 .subject-card, .info-card, .activity-card, .admin-card {
-    background: white;
-    border-radius: var(--border-radius);
+    /* BOX MODEL */
+    width: 100%;
+    margin: 0;
+    padding: 0;
     border: 1px solid #F0F0F0;
-    box-shadow: var(--shadow-sm);
-    transition: all var(--transition-normal);
+    border-radius: 20px;
     overflow: hidden;
+    
+    /* ESTILOS */
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease-in-out;
 }
 
 .subject-card:hover, .activity-card:hover {
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
     transform: translateY(-4px);
 }
 
 .subject-card {
+    /* DISPLAY */
     display: flex;
     flex-direction: column;
-    overflow: hidden;
 }
 
 .subject-banner {
+    /* BOX MODEL */
+    width: 100%;
     height: 80px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    
+    /* DISPLAY */
     display: flex;
     align-items: center;
     justify-content: center;
+    
+    /* ESTILOS */
     font-size: 32px;
 }
 
 .subject-info {
-    padding: var(--spacing-lg);
+    /* BOX MODEL */
+    width: 100%;
+    margin: 0;
+    padding: 24px;
+    border: none;
+    gap: 16px;
+    
+    /* DISPLAY */
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
 }
 
 .subject-info h3 {
@@ -461,51 +562,86 @@ a:hover {
 }
 
 .subject-info p {
+    /* BOX MODEL */
     margin: 0;
+    padding: 0;
+    border: none;
+    
+    /* ESTILOS */
     font-size: 13px;
 }
 
 .progress-bar-container {
+    /* BOX MODEL */
+    width: 100%;
     height: 8px;
-    background: #E0E0E0;
+    margin: 0;
+    padding: 0;
+    border: none;
     border-radius: 10px;
+    
+    /* ESTILOS */
+    background: #E0E0E0;
     overflow: hidden;
 }
 
 .progress-fill {
+    /* BOX MODEL */
     height: 100%;
-    transition: width var(--transition-normal);
+    width: 0%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    
+    /* ESTILOS */
+    transition: width 0.3s ease-in-out;
 }
 
 .progress-text {
+    /* BOX MODEL */
+    margin: 0;
+    padding: 0;
+    border: none;
+    
+    /* ESTILOS */
     font-size: 12px;
-    color: var(--text-muted);
+    color: #666666;
     font-weight: 700;
 }
 
-/* ============================================
-   8. BOTONES
-   ============================================ */
 
-.btn-primary, .btn-secondary, .btn-auth, .btn-delete {
+.btn-primary, .btn-secondary, .btn-auth, .btn-delete, .btn-banner {
+    /* BOX MODEL */
+    margin: 0;
+    padding: 16px 24px;
     border: none;
-    border-radius: var(--border-radius-sm);
-    font-family: var(--font-body);
+    border-radius: 12px;
+    
+    /* DISPLAY */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* ESTILOS */
+    font-family: 'Nunito', sans-serif;
     font-weight: 700;
     cursor: pointer;
-    transition: all var(--transition-fast);
     font-size: 14px;
-    padding: var(--spacing-md) var(--spacing-lg);
+    transition: all 0.2s ease-in-out;
 }
 
 .btn-primary {
-    background: var(--orange-primary);
+    /* BOX MODEL */
+    padding: 16px 24px;
+    
+    /* ESTILOS */
+    background: #FF7A00;
     color: white;
     box-shadow: 0 4px 15px rgba(255, 122, 0, 0.3);
 }
 
 .btn-primary:hover {
-    background: var(--orange-dark);
+    background: #E66E00;
     box-shadow: 0 6px 20px rgba(255, 122, 0, 0.4);
     transform: translateY(-2px);
 }
@@ -515,33 +651,44 @@ a:hover {
 }
 
 .btn-secondary {
-    background: var(--orange-light);
-    color: var(--orange-primary);
-    border: 1px solid var(--orange-primary);
+    /* BOX MODEL */
+    padding: 16px 24px;
+    border: 1px solid #FF7A00;
+    
+    /* ESTILOS */
+    background: #FFF0E0;
+    color: #FF7A00;
 }
 
 .btn-secondary:hover {
-    background: var(--orange-primary);
+    background: #FF7A00;
     color: white;
 }
 
 .btn-auth {
+    /* BOX MODEL */
     width: 100%;
-    padding: var(--spacing-md);
-    background: var(--orange-primary);
+    padding: 16px;
+    margin: 0;
+    margin-top: 16px;
+    
+    /* ESTILOS */
+    background: #FF7A00;
     color: white;
     font-size: 16px;
-    margin-top: var(--spacing-md);
 }
 
 .btn-auth:hover {
-    background: var(--orange-dark);
+    background: #E66E00;
 }
 
 .btn-delete {
+    /* BOX MODEL */
+    padding: 4px 12px;
+    
+    /* ESTILOS */
     background: #FFEBEE;
-    color: var(--danger);
-    padding: var(--spacing-xs) var(--spacing-md);
+    color: #D32F2F;
     font-size: 12px;
 }
 
@@ -550,162 +697,231 @@ a:hover {
 }
 
 .btn-banner {
-    background: var(--orange-primary);
+    /* BOX MODEL */
+    padding: 16px 32px;
+    
+    /* ESTILOS */
+    background: #FF7A00;
     color: white;
-    padding: var(--spacing-md) var(--spacing-xl);
-    border-radius: var(--border-radius-sm);
-    font-weight: 700;
-    border: none;
-    cursor: pointer;
 }
 
 .btn-banner:hover {
-    background: var(--orange-dark);
+    background: #E66E00;
 }
 
-/* ============================================
-   9. FORMULARIOS
-   ============================================ */
 
 .form-group {
-    margin-bottom: var(--spacing-lg);
+    /* BOX MODEL */
+    width: 100%;
+    margin: 0;
+    margin-bottom: 24px;
+    padding: 0;
+    border: none;
+    
+    /* DISPLAY */
     text-align: left;
 }
 
 .form-group label {
+    /* BOX MODEL */
     display: block;
+    margin: 0;
+    margin-bottom: 8px;
+    padding: 0;
+    border: none;
+    
+    /* ESTILOS */
     font-size: 14px;
     font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: var(--spacing-sm);
+    color: #333333;
 }
 
 .form-group input, .form-group select, .form-group textarea {
+    /* BOX MODEL */
     width: 100%;
-    padding: var(--spacing-md);
+    margin: 0;
+    padding: 16px;
     border: 2px solid #F0F0F0;
-    border-radius: var(--border-radius-sm);
-    font-family: var(--font-body);
+    border-radius: 12px;
+    
+    /* ESTILOS */
+    font-family: 'Nunito', sans-serif;
     font-size: 14px;
-    transition: border-color var(--transition-fast);
     background: #FAFAFA;
+    transition: border-color 0.2s ease-in-out;
 }
 
 .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    /* BOX MODEL */
+    border-color: #FF7A00;
+    
+    /* ESTILOS */
     outline: none;
-    border-color: var(--orange-primary);
     background: white;
     box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.1);
 }
 
 .form-group input::placeholder {
-    color: var(--text-light);
+    color: #999999;
 }
 
 .form-row {
+    /* BOX MODEL */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    gap: 24px;
+    
+    /* DISPLAY */
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-lg);
 }
 
-/* Validación de contraseña */
 .password-strength {
-    margin-top: var(--spacing-sm);
+    /* BOX MODEL */
+    width: 100%;
+    margin: 0;
+    margin-top: 8px;
+    padding: 0;
+    border: none;
+    
+    /* ESTILOS */
     font-size: 12px;
 }
 
 .strength-bar {
+    /* BOX MODEL */
+    width: 100%;
     height: 6px;
-    background: #E0E0E0;
+    margin: 0;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    padding: 0;
+    border: none;
     border-radius: 3px;
+    
+    /* ESTILOS */
+    background: #E0E0E0;
     overflow: hidden;
-    margin: var(--spacing-xs) 0;
 }
 
 .strength-fill {
+    /* BOX MODEL */
     height: 100%;
     width: 0%;
-    transition: width var(--transition-fast), background-color var(--transition-fast);
+    margin: 0;
+    padding: 0;
+    border: none;
+    
+    /* ESTILOS */
+    transition: width 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 .strength-fill.weak {
     width: 33%;
-    background: var(--danger);
+    background: #D32F2F;
 }
 
 .strength-fill.medium {
     width: 66%;
-    background: var(--warning);
+    background: #FF9F00;
 }
 
 .strength-fill.strong {
     width: 100%;
-    background: var(--success);
+    background: #4CAF50;
 }
 
 .requirements {
-    list-style: none;
+    /* BOX MODEL */
+    width: 100%;
+    margin: 0;
+    margin-top: 16px;
     padding: 0;
-    margin: var(--spacing-md) 0;
+    border: none;
+    gap: 4px;
+    
+    /* DISPLAY */
+    list-style: none;
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xs);
 }
 
 .requirements li {
+    /* BOX MODEL */
+    margin: 0;
+    padding: 0;
+    border: none;
+    gap: 8px;
+    
+    /* DISPLAY */
     font-size: 12px;
     display: flex;
     align-items: center;
-    gap: var(--spacing-sm);
+    
+    /* ESTILOS */
+    color: #666666;
 }
 
 .requirements li:before {
     content: '○';
-    color: var(--text-light);
+    color: #999999;
     font-weight: bold;
 }
 
 .requirements li.met {
-    color: var(--success);
+    color: #4CAF50;
 }
 
 .requirements li.met:before {
     content: '✓';
-    color: var(--success);
+    color: #4CAF50;
 }
 
-/* ============================================
-   10. GRILLAS (Grid + Flexbox)
-   ============================================ */
 
 .subjects-grid, .subjects-container, .activities-grid, .rewards-showcase {
+
+    width: 100%;
+    margin: 0;
+    margin-top: 24px;
+    padding: 0;
+    border: none;
+    gap: 24px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: var(--spacing-lg);
-    margin-top: var(--spacing-lg);
 }
 
 .bottom-grid {
+
+    width: 100%;
+    margin: 0;
+    margin-top: 32px;
+    padding: 0;
+    border: none;
+    gap: 24px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: var(--spacing-lg);
-    margin-top: var(--spacing-xl);
 }
 
 .admin-layout {
+
+    width: 100%;
+    margin: 0;
+    margin-top: 24px;
+    padding: 0;
+    border: none;
+    gap: 32px;
+
     display: grid;
     grid-template-columns: 2fr 1.2fr;
-    gap: var(--spacing-xl);
-    margin-top: var(--spacing-lg);
 }
 
 .admin-layout .full-width-section {
     grid-column: span 2;
 }
 
-/* ============================================
-   11. COLORES POR MATERIA
-   ============================================ */
+
 
 .math-bg {
     background: linear-gradient(135deg, #FF9F00, #FF7A00);
@@ -734,52 +950,121 @@ a:hover {
     background: #7E57C2;
 }
 
-/* ============================================
-   12. TABLAS (Admin)
-   ============================================ */
+
 
 .table-container {
+
     width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
     overflow-x: auto;
 }
 
 .modern-table {
+
     width: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
     border-collapse: collapse;
+
     text-align: left;
     font-size: 14px;
 }
 
 .modern-table th {
-    background-color: var(--orange-light);
-    color: var(--orange-dark);
-    padding: var(--spacing-md);
-    font-weight: 700;
+
+    padding: 16px;
+    border: none;
     border-bottom: 2px solid #FFE0C2;
+    
+
+    background-color: #FFF0E0;
+    color: #E66E00;
+    font-weight: 700;
 }
 
 .modern-table td {
-    padding: var(--spacing-md);
+
+    padding: 16px;
+    border: none;
     border-bottom: 1px solid #F5F5F5;
-    color: var(--text-dark);
+    
+    color: #333333;
 }
 
 .modern-table tr:hover td {
-    background-color: var(--orange-lighter);
+    background-color: #FFFBF5;
 }
 
-/* ============================================
-   13. MEDIA QUERIES (Responsive)
-   ============================================ */
+
+.auth-container {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 40px 35px;
+    border: 1px solid #F0F0F0;
+    border-radius: 30px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    background: white;
+    box-shadow: 0 10px 30px rgba(255, 122, 0, 0.05);
+}
+
+#auth-logo {
+
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* ESTILOS */
+    background: #FF7A00;
+    box-shadow: 0 4px 15px rgba(255, 122, 0, 0.2);
+    font-size: 35px;
+}
+
+#auth-footer {
+
+    width: 100%;
+    margin: 0;
+    margin-top: 25px;
+    padding: 0;
+    border: none;
+    
+
+    font-size: 14px;
+    font-weight: 600;
+    color: #666666;
+}
+
+#auth-footer a {
+    color: #FF7A00;
+    font-weight: 700;
+}
+
+#auth-footer a:hover {
+    text-decoration: underline;
+}
+
+
 
 @media (max-width: 1024px) {
     #sidebar {
         width: 240px;
     }
 
-    .main-content {
+    #main-content {
+        width: calc(100% - 240px);
         margin-left: 240px;
-        padding: var(--spacing-lg);
     }
 
     .subjects-grid, .bottom-grid {
@@ -800,7 +1085,8 @@ a:hover {
         width: 200px;
     }
 
-    .main-content {
+    #main-content {
+        width: calc(100% - 200px);
         margin-left: 200px;
     }
 
@@ -835,25 +1121,18 @@ a:hover {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: var(--spacing-md);
+        padding: 16px;
     }
 
-    #sidebar-content {
-        display: none;
-    }
-
-    #sidebar.active #sidebar-content {
-        display: flex;
-    }
-
-    .main-content {
+    #main-content {
+        width: 100%;
         margin-left: 0;
-        padding: var(--spacing-md);
+        padding: 16px;
     }
 
     #header-top {
         flex-direction: column;
-        gap: var(--spacing-md);
+        gap: 16px;
     }
 
     #user-status {
